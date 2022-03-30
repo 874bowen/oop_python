@@ -24,11 +24,25 @@ class Item:
     def calculate_total_price(self):
         return self.price * self.quantity
 
+    def apply_discount(self):
+        self.price = self.price * self.pay_rate # cant access the pay_rate directly have to use Item.pay_rate
+
 
 item1 = Item("Phone", 100, 5)
+item1.apply_discount()
+print(item1.price)
+print(Item.pay_rate)
+
 item2 = Item("Laptop", 1000, 3)
+item2.pay_rate = 0.7
+item2.apply_discount()
+print(item2.pay_rate)
+print(item2.calculate_total_price())
 item3 = Item("Laptop", 12)
 
 print(item1.calculate_total_price())
-print(item2.calculate_total_price())
+# print(Item.__dict__)  # All the attributes for class level
+# print(item1.__dict__)   # All the attributes for instance level
+
+
 print(item3.calculate_total_price())

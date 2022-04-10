@@ -53,6 +53,26 @@ class Item:
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
 
+class Phone(Item):
+    all = []
+    def __init__(self, name: str, price: float, quantity=0, broken_phones=0):
+
+        # Run validations to the received args
+        assert price >= 0, f"Price {price} is not greater than or equal to zero!"
+        assert quantity >= 0, f"Quantity {quantity} is not greater than or equal to zero!"
+        assert broken_phones >= 0, f"Broken phones {broken_phones} is not greater than or equal to zero!"
+
+
+        # Assign to self object
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.broken_phones = broken_phones
+
+        Phone.all.append(self)
+
+Phone1 = Phone("Iphone", 12200, 30, 2)
+print(Phone1.calculate_total_price())
 print(Item.is_integer(3.0))
 Item.instantiate_from_csv()
 print(Item.all)

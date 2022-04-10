@@ -26,9 +26,6 @@ class Item:
     def apply_discount(self):
         self.price = self.price * self.pay_rate # cant access the pay_rate directly have to use Item.pay_rate
 
-    def __repr__(self):
-        return f"Item('{self.name}', {self.price}, {self.quantity})"
-
     @classmethod # decorator to say that it is not a class function
     def instantiate_from_csv(cls):
         with open('items.csv', 'r') as f:
@@ -43,6 +40,19 @@ class Item:
                  )
             print(item)
 
+    @staticmethod
+    def is_integer(num):
+        if isinstance(num, float):
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
 
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity})"
+
+
+print(Item.is_integer(3.0))
 Item.instantiate_from_csv()
 print(Item.all)

@@ -7,5 +7,6 @@ print(Phone1.calculate_total_price())
 print(Item.is_integer(3.0))
 Item.instantiate_from_csv()
 print(Phone1.name)
+
 print(Item.all)
 print(Phone.all)

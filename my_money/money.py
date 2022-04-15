@@ -23,6 +23,10 @@ class Money:
         self.gold = gold
         # initial rates
 
+        self.total = self.equity + self.debt + self.gold
+        self.equity_rate = (self.equity * 100) / self.total
+        self.debt_rate = (self.debt * 100) / self.total
+        self.gold_rate = (self.gold * 100) / self.total
         Money.all.append(self)
 
     def sip(self, sip_equity: float, sip_debt: float, sip_gold: float):
@@ -51,6 +55,13 @@ class Money:
     def balance(self):
         """function balance to check balance"""
         return f"{self.equity} {self.debt} {self.gold}"
+
+    def rebalance(self):
+        """function rebalance to return a rebalanced amount at the end of 6 months"""
+        self.total = math.floor(self.equity + self.debt + self.gold)
+        self.equity = math.floor(self.total * self.equity_rate / 100)
+        self.debt = math.floor(self.total * self.debt_rate / 100)
+        self.gold = math.floor(self.total * self.gold_rate / 100)
 
 
 

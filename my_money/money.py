@@ -1,3 +1,4 @@
+import math
 import sys
 
 
@@ -35,6 +36,17 @@ class Money:
         self.equity += sip_equity
         self.debt += sip_debt
         self.gold += sip_gold
+
+    def change(self, change_equity: float, change_debt: float, change_gold: float):
+        """
+        this function will change the amounts respective the rates provided
+        :param change_gold:
+        :param change_debt:
+        :param change_equity:
+        """
+        self.equity = math.floor(self.equity * (change_equity + 100) / 100)
+        self.debt = math.floor(self.debt * (change_debt + 100) / 100)
+        self.gold = math.floor(self.gold * (change_gold + 100) / 100)
 
 
 def test(file):

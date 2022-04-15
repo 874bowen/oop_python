@@ -22,6 +22,20 @@ class Money:
         self.gold = gold
         # initial rates
 
+        Money.all.append(self)
+
+    def sip(self, sip_equity: float, sip_debt: float, sip_gold: float):
+        """
+        :param sip_gold:
+        :param sip_debt:
+        :param sip_equity:
+        this function will add some amounts to the money
+        from the second month
+        """
+        self.equity += sip_equity
+        self.debt += sip_debt
+        self.gold += sip_gold
+
 
 def test(file):
     """

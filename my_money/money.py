@@ -48,6 +48,12 @@ class Money:
         self.debt = math.floor(self.debt * (change_debt + 100) / 100)
         self.gold = math.floor(self.gold * (change_gold + 100) / 100)
 
+    def balance(self):
+        """function balance to check balance"""
+        return f"{self.equity} {self.debt} {self.gold}"
+
+
+
 
 def test(file):
     """

@@ -63,7 +63,8 @@ class Money:
         self.debt = math.floor(self.total * self.debt_rate / 100)
         self.gold = math.floor(self.total * self.gold_rate / 100)
 
-
+    def __repr__(self):
+        return f"{self.equity} {self.debt} {self.gold}"
 
 
 def test(file):

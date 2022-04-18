@@ -13,6 +13,7 @@
     console.log("First log");
     alert("Here I am");
     document.write("<p>Hello World</p>");
+
 </script>
 <noscript>
     Your browser does not support or has disabled javascript
@@ -21,5 +22,18 @@
 <p><a href="js-01.htm" onclick="alert('Hi'); return false;">Click Me!</a></p>
 <script type="text/javascript" src="script.js">
 </script>
+<p>
+    <a href="js-01.htm" onclick="document.getElementById('name').innerHTML = 'Ivan'; return false;">Ivan</a>
+    <a href="js-01.htm" onclick="document.getElementById('name').innerHTML = 'Bowen'; return false;">Bowen</a>
+</p>
+<p>I am <b id="name">named</b></p>
+
+<p><a href="#" onclick="add(); return false;">More</a></p>
+<p>
+    <ul id="the_list">
+    <li>First item</li>
+    </ul>
+</p>
+
 </body>
 </html>

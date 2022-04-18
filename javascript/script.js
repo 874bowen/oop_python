@@ -29,3 +29,12 @@ an.party();
 dog = new PartyAnimal("Simba");
 dog.party();
 dog.party();
+counter = 0
+console.log(document.getElementById("the_list"));
+    function add() {
+        var x = document.createElement('li');
+        x.className = "list_item";
+        x.innerHTML = "Counter is " + counter;
+        document.getElementById("the_list").appendChild(x);
+        counter++
+    }

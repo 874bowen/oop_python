@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="para">Where is the spinner? <img src="fade-spinner.gif" id="spinner" height="25" style="vertical-align:center; display:none;"></p>
+<p><a href="#" id="toggle">Toggle</a> || <a href="#" id="red">Red</a></p>
+<p><a href="#" id="more">More</a></p>
+<p>
+    <ul id="the_list">
+    <li>First item</li>
+    </ul>
+</p>
+<!--<script src="jquery.slim.js"></script>-->
+<script src="..\node_modules\jquery\dist\jquery.slim.min.js"></script>
+
+<script>
+    counter = 0
+    $(document).ready(function(){
+        $("#toggle").on('click', function(){
+            $("#spinner").toggle();
+        });
+        $("#red").on('click', function(){
+            $("#para").css('background-color', 'blue');
+        });
+        $("#more").on('click', function(){
+            console.log("more clicked");
+            $("#the_list").append('<li>Counter is '+ counter +'</li>');
+            counter++;
+        });
+        alert("Welcome to jQuery by John Resig");
+        console.log("jQuery manh");
+    })
+    $(window).resize(function(){
+        console.log("window width = " + $(window).width() + "window height = " + $(window).height());
+    });
+
+</script >
+</body>
+</html>

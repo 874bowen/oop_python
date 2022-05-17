@@ -1,4 +1,27 @@
 document.write("<p>I am called from outside</p>");
+var materials = [
+    'Hydrogen',
+    'Helium',
+    'Lithium',
+    'Beryllium'
+]
+var materialsLength1 = materials.map(function(material){
+    return material.length;
+});
+var materialsLength2 = materials.map((material) => {
+    return material.length;
+});
+var materialsLength3 = materials.map(material => material.length);
+console.log(materialsLength3);
+console.log(materialsLength2);
+console.log(materialsLength1);
+
+var sum = (a, b) => a * b;
+console.log(sum(2, 3));
+var isPositive = number => number >= 0;
+console.log(isPositive(3));
+var randomNum = () => Math.random
+console.log(randomNum);
 gl = 123
 function product(a, b) {
     // to make variable in js local we add 'var'

@@ -10,7 +10,7 @@ if true swap
 def bubblesort(lst, lb, ub):
     for j in range(len(lst)-1):
         print(j)
-        for i in range(len(lst)-1):
+        for i in range(len(lst)-1-j):
             if lst[i] > lst[i+1]:
                 print("Greater")
                 print(swap(lst, i, i+1))

@@ -23,3 +23,13 @@ def partition(lst, lb, ub):
         swap(lst, lst.index(pivot), end)
     return end
 
+
+def quicksort(lst, lb, ub):
+    if lb < ub:
+        loc = partition(lst, lb, ub)
+        print(loc, lst)
+        quicksort(lst, lb, loc - 1)
+        quicksort(lst, loc + 1, ub)
+
+
+quicksort([10, 12, 4, 5, 36], 0, 4)

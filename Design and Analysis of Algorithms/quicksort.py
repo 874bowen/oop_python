@@ -1,6 +1,4 @@
-def swap(lst, pos1, pos2):
-    lst[pos1], lst[pos2] = lst[pos2], lst[pos1]
-    return lst
+from swap import swap
 
 
 def partition(lst, lb, ub):
